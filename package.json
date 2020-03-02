@@ -1,0 +1,19 @@
+{
+  "name": "matchday",
+  "version": "1.0.0",
+  "description": "Run 'npm run start' to generate output and 'npm run test' to run test cases",
+  "main": "processData.js",
+  "scripts": {
+    "test": "mocha",
+    "index": "node index.js input.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janetechinc/coding-challenge-soccer"
+  },
+  "author": "Karthik Vallamsetla",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^7.0.1"
+  }
+}
