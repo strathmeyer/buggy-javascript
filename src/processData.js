@@ -106,13 +106,7 @@ const processData = (
     }
     if (count % MATCH_DAY_LIMITER === 0) {
       matchDayEntries.sort((obj1, obj2) => {
-        const primarySort = obj2.val - obj1.val;
-        const secondarySort = obj1.key.localeCompare(obj2.key);
-        if (primarySort === 0) {
-          return secondarySort;
-        } else {
-          return primarySort;
-        }
+        return obj2.val - obj1.val;
       });
       // check for incomplete matchday i.e. < 3 matches
       const title = `Matchday ${count / MATCH_DAY_LIMITER}`;
