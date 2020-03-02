@@ -34,8 +34,8 @@ const processData = (
   });
 
   let count = 0;
-  const MATCH_DAY_LIMITER = 3;
-  const TOP_TEAMS_COUNT = 3;
+  const MATCH_DAY_LIMITER = 4;
+  const TOP_TEAMS_COUNT = 4;
   let matchDayEntries = [];
   const matchTotalsMap = {};
 
