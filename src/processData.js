@@ -58,7 +58,7 @@ const processData = (
       if (!matchTotalsMap[match[3]]) {
         matchTotalsMap[match[3]] = 0;
       }
-      if (score1 === score2) {
+      if (score1 == score2) {
         // draw
         matchTotalsMap[match[1]] += 1;
         matchTotalsMap[match[3]] += 1;
@@ -104,7 +104,7 @@ const processData = (
         errorMessageCallback(`Invalid entry at line: ${count}`);
       closeReader();
     }
-    if (count % MATCH_DAY_LIMITER === 0) {
+    if (count % MATCH_DAY_LIMITER == 0) {
       matchDayEntries.sort((obj1, obj2) => {
         return obj2.val - obj1.val;
       });
@@ -128,7 +128,7 @@ const processData = (
     output.end();
   });
   output.on("finish", () => {
-    if (count === 0) {
+    if (count == 0) {
       // empty file read
       fs.unlink(outputFile, err => err);
       errorMessageCallback && errorMessageCallback(`Empty file ${inputFile}`);
