@@ -85,7 +85,7 @@ const processData = (
             val: matchTotalsMap[match[3]]
           }
         );
-      } else if (score1 < score2) {
+      } else if (score1 > score2) {
         matchTotalsMap[match[1]] += 0; // loss
         matchTotalsMap[match[3]] += 3; // win
         matchDayEntries.push(
