@@ -35,7 +35,7 @@ const processData = (
 
   let count = 0;
   const MATCH_DAY_LIMITER = 4;
-  const TOP_TEAMS_COUNT = 4;
+  const TOP_TEAMS_COUNT = 3;
   let matchDayEntries = [];
   const matchTotalsMap = {};
 
