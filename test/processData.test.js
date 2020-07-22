@@ -46,14 +46,14 @@ describe("Process Data", () => {
       }
     );
   });
-  it("should show usage for missing input file", done => {
+  it("errorMessageCallback should show usage for missing input file", done => {
     const filename = "test-output-3.txt";
     processData(null, filename, msg => {
       assert.equal(msg, "Usage: node processData.js input.txt");
       done();
     });
   });
-  it("should throw error on malformed file contents", done => {
+  it("errorMessageCallback should throw error on malformed file contents", done => {
     const filename = "test-output-4.txt";
     files.push(filename);
     processData("test/fixtures/errorInput.txt", filename, msg => {
@@ -61,7 +61,7 @@ describe("Process Data", () => {
       done();
     });
   });
-  it("should throw error on empty file contents", done => {
+  it("errorMessageCallback should throw error on empty file contents", done => {
     const filename = "test-output-5.txt";
     files.push(filename);
     const inputFile = "test/fixtures/emptyInput.txt";
