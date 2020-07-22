@@ -3,16 +3,19 @@ const fs = require("fs");
 const processData = require("../src/processData");
 
 describe("Process Data", () => {
-  const files = [];
-  after(() => {
-    files.forEach(file =>
-      fs.unlinkSync(file, err => {
-        if (err) {
-          console.log(file);
-          console.log(err);
-        }
-      })
-    );
+  let files = [];
+  afterEach(() => {
+    files.forEach(file => {
+      if (fs.existsSync(file)) {
+        fs.unlinkSync(file, err => {
+          if (err) {
+            console.log(file);
+            console.log(err);
+          }
+        });
+      }
+    });
+    files = [];
   });
   it("should render response on valid data for formatted input", done => {
     const filename = "test-output-1.txt";
