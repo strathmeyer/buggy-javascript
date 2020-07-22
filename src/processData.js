@@ -62,33 +62,15 @@ const processData = (
         // draw
         matchTotalsMap[match[1]] += 1;
         matchTotalsMap[match[3]] += 1;
-        matchDayEntries.push(
-          {
-            key: match[1],
-            val: matchTotalsMap[match[1]]
-          },
-          {
-            key: match[3],
-            val: matchTotalsMap[match[3]]
-          }
-        );
       } else if (score1 > score2) {
         matchTotalsMap[match[1]] += 3; // win
         matchTotalsMap[match[3]] += 0; // loss
-        matchDayEntries.push(
-          {
-            key: match[1],
-            val: matchTotalsMap[match[1]]
-          },
-          {
-            key: match[3],
-            val: matchTotalsMap[match[3]]
-          }
-        );
       } else if (score1 > score2) {
         matchTotalsMap[match[1]] += 0; // loss
         matchTotalsMap[match[3]] += 3; // win
-        matchDayEntries.push(
+      }
+
+      matchDayEntries.push(
           {
             key: match[1],
             val: matchTotalsMap[match[1]]
@@ -98,7 +80,6 @@ const processData = (
             val: matchTotalsMap[match[3]]
           }
         );
-      }
     } else {
       errorMessageCallback &&
         errorMessageCallback(`Invalid entry at line: ${count}`);
