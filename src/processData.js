@@ -65,7 +65,7 @@ const processData = (
       } else if (score1 > score2) {
         matchTotalsMap[match[1]] += 3; // win
         matchTotalsMap[match[3]] += 0; // loss
-      } else if (score1 > score2) {
+      } else if (score2 > score1) {
         matchTotalsMap[match[1]] += 0; // loss
         matchTotalsMap[match[3]] += 3; // win
       }
@@ -87,7 +87,19 @@ const processData = (
     }
     if (count % MATCH_DAY_LIMITER == 0) {
       matchDayEntries.sort((obj1, obj2) => {
-        return obj2.val - obj1.val;
+        if (obj1.val < obj2.val) {
+          return 1;
+        } else if (obj1.val > obj2.val) {
+          return -1;
+        } else {
+          if (obj1.key > obj2.key) {
+            return 1;
+          } else if (obj1.key < obj2.key) {
+            return -1;
+          } else {
+            return 0;
+          }
+        }
       });
       // check for incomplete matchday i.e. < 3 matches
       const title = `Matchday ${count / MATCH_DAY_LIMITER}`;
