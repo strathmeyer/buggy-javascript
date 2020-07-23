@@ -45,8 +45,8 @@ const processData = (
       /\s*([A-z\s]+?)\s*([0-9]+)\s*,\s*([A-z\s]+?)\s*([0-9]+)\s*/
     );
     if (match) {
-      const score1 = match[2];
-      const score2 = match[4];
+      const score1 = +match[2];
+      const score2 = +match[4];
       if (isNaN(score1) || isNaN(score2)) {
         errorMessageCallback &&
           errorMessageCallback(`Invalid score at line: ${count}`);
